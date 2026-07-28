@@ -4,8 +4,9 @@
   "license": "MIT",
   "scripts": {},
   "private": true,
-  "dependencies": {},
   "devDependencies": {
+    "@expo/cli": "~56.1.14",
+    "@nx/expo": "^23.1.0",
     "@nx/js": "23.1.0",
     "@swc-node/register": "1.11.1",
     "@swc/core": "1.15.8",
@@ -17,6 +18,13 @@
     "typescript": "~6.0.3"
   },
   "workspaces": [
-    "packages/*"
-  ]
+    "packages/*",
+    "apps/*"
+  ],
+  "dependencies": {
+    "expo": "~56.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-native": "0.85.3"
+  }
 }
