@@ -22,6 +22,7 @@
     "apps/*"
   ],
   "dependencies": {
+    "@expo/vector-icons": "^15.1.1",
     "expo": "~56.0.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
