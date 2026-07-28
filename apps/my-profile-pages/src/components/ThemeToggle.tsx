@@ -39,9 +39,17 @@ const ThemeToggle = () => {
 const Icon = (props: any) => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
+  const isSun = props.icon === 'sun';
 
   return (
-    <View className='w-10 h-10 relative z-50 rounded-full items-center justify-center flex flex-row'>
+    <View 
+      className='w-10 h-10 relative z-50 rounded-full items-center justify-center flex flex-row'
+      style={
+        !isDark && isSun ? { backgroundColor: 'yellow' } :
+        isDark && !isSun ? { backgroundColor: 'blueviolet' } :
+        undefined
+      }
+    >
       <Feather name={props.icon} size={20} color={`${isDark ? 'white' : 'black'}`} />
     </View>
   );

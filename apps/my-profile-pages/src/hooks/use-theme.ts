@@ -4,11 +4,10 @@
  */
 
 import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { useTheme as useCustomTheme } from '@/providers/ThemeProvider';
 
 export function useTheme() {
-  const scheme = useColorScheme();
-  const theme = scheme === 'unspecified' ? 'light' : scheme;
+  const { theme } = useCustomTheme();
 
   return Colors[theme];
 }
