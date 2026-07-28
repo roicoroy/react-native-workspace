@@ -29,8 +29,8 @@ export default function SplashScreenComponent() {
         withTiming(0, { duration: 800 }, () => {
           // Navigate to home after fade out
           runOnJS(router.replace)('/home');
-        })
-      )
+        }),
+      ),
     );
   }, [opacity]);
 

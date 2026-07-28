@@ -1,13 +1,17 @@
 import { Pressable, View } from 'react-native';
 import { useTheme } from '../providers/ThemeProvider';
 import Feather from '@expo/vector-icons/Feather';
-import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withSpring,
+} from 'react-native-reanimated';
 import { useEffect } from 'react';
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === 'dark';
-  const translateX = useSharedValue(isDark ? 46 : 3.5); 
+  const translateX = useSharedValue(isDark ? 46 : 3.5);
 
   useEffect(() => {
     translateX.value = withSpring(isDark ? 46 : 3.5, {
@@ -23,12 +27,13 @@ const ThemeToggle = () => {
   });
 
   return (
-    <Pressable 
+    <Pressable
       onPress={toggleTheme}
-      className='w-24 h-12 p-1 bg-secondary relative flex-row rounded-full items-center justify-between'>
-      <Icon icon='sun' />
-      <Icon icon='moon' />
-      <Animated.View 
+      className="w-24 h-12 p-1 bg-secondary relative flex-row rounded-full items-center justify-between"
+    >
+      <Icon icon="sun" />
+      <Icon icon="moon" />
+      <Animated.View
         style={[animatedStyle]}
         className="w-10 h-10 bg-background rounded-full items-center justify-center flex flex-row absolute"
       />
@@ -42,15 +47,21 @@ const Icon = (props: any) => {
   const isSun = props.icon === 'sun';
 
   return (
-    <View 
-      className='w-10 h-10 relative z-50 rounded-full items-center justify-center flex flex-row'
+    <View
+      className="w-10 h-10 relative z-50 rounded-full items-center justify-center flex flex-row"
       style={
-        !isDark && isSun ? { backgroundColor: 'yellow' } :
-        isDark && !isSun ? { backgroundColor: 'blueviolet' } :
-        undefined
+        !isDark && isSun
+          ? { backgroundColor: 'yellow' }
+          : isDark && !isSun
+            ? { backgroundColor: 'blueviolet' }
+            : undefined
       }
     >
-      <Feather name={props.icon} size={20} color={`${isDark ? 'white' : 'black'}`} />
+      <Feather
+        name={props.icon}
+        size={20}
+        color={`${isDark ? 'white' : 'black'}`}
+      />
     </View>
   );
 };

@@ -19,7 +19,12 @@ export default function RootLayout() {
           <View className="flex-row justify-end p-4 bg-background">
             <ThemeToggle />
           </View>
-          <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: 'transparent' } }}>
+          <Stack
+            screenOptions={{
+              headerShown: false,
+              contentStyle: { backgroundColor: 'transparent' },
+            }}
+          >
             <Stack.Screen name="index" />
             <Stack.Screen name="home" />
           </Stack>

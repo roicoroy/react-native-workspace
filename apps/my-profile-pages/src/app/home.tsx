@@ -7,9 +7,11 @@ import { CV_DATA } from '@/data/cv';
 
 export default function HomeScreen() {
   return (
-    <SafeAreaView className="flex-1 bg-zinc-50 dark:bg-zinc-950" edges={['top']}>
+    <SafeAreaView
+      className="flex-1 bg-zinc-50 dark:bg-zinc-950"
+      edges={['top']}
+    >
       <ScrollView contentContainerClassName="p-6 w-full max-w-3xl self-center pb-12">
-        
         {/* Header Section */}
         <View className="items-center mb-12 mt-6">
           <ThemedText className="text-4xl text-center mb-2 font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
@@ -19,11 +21,17 @@ export default function HomeScreen() {
             {CV_DATA.header.title}
           </ThemedText>
           <View className="flex-row flex-wrap justify-center gap-x-2 gap-y-1 opacity-80">
-            <ThemedText className="text-sm text-zinc-600 dark:text-zinc-400">{CV_DATA.header.location}</ThemedText>
+            <ThemedText className="text-sm text-zinc-600 dark:text-zinc-400">
+              {CV_DATA.header.location}
+            </ThemedText>
             <ThemedText className="text-sm text-zinc-400">•</ThemedText>
-            <ThemedText className="text-sm text-zinc-600 dark:text-zinc-400">{CV_DATA.header.email}</ThemedText>
+            <ThemedText className="text-sm text-zinc-600 dark:text-zinc-400">
+              {CV_DATA.header.email}
+            </ThemedText>
             <ThemedText className="text-sm text-zinc-400">•</ThemedText>
-            <ThemedText className="text-sm text-zinc-600 dark:text-zinc-400">{CV_DATA.header.linkedin}</ThemedText>
+            <ThemedText className="text-sm text-zinc-600 dark:text-zinc-400">
+              {CV_DATA.header.linkedin}
+            </ThemedText>
           </View>
         </View>
 
@@ -54,7 +62,10 @@ export default function HomeScreen() {
           </ThemedText>
           <View className="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm flex-row flex-wrap gap-2">
             {CV_DATA.skills.map((skill, index) => (
-              <View key={index} className="bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-full">
+              <View
+                key={index}
+                className="bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-full"
+              >
                 <ThemedText className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
                   {skill}
                 </ThemedText>
@@ -90,7 +101,10 @@ export default function HomeScreen() {
           </ThemedText>
           <View className="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm">
             {CV_DATA.education.map((edu, index) => (
-              <View key={edu.id} className={index !== CV_DATA.education.length - 1 ? "mb-6" : ""}>
+              <View
+                key={edu.id}
+                className={index !== CV_DATA.education.length - 1 ? 'mb-6' : ''}
+              >
                 <ThemedText className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
                   {edu.degree}
                 </ThemedText>
@@ -104,7 +118,6 @@ export default function HomeScreen() {
             ))}
           </View>
         </View>
-
       </ScrollView>
     </SafeAreaView>
   );
