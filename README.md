@@ -1,1 +1,1 @@
-# NX React Nativce
+# NX React Native Workspace
